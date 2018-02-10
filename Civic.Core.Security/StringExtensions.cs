@@ -10,7 +10,7 @@ namespace Civic.Core.Security
         [DebuggerStepThrough]
         public static string ToHash(this string data)
         {
-            if(data.IsNullOrEmpty())
+            if(string.IsNullOrEmpty(data))
                 return "";
 
             var sha = SHA512.Create();

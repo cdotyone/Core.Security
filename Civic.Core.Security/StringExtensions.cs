@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
 
-namespace Civic.Core.Framework.Extensions
+namespace Civic.Core.Security
 {
     public static class StringExtensions
     {

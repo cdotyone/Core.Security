@@ -69,7 +69,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Civic.Core.Configuration" Version="1.24.514" />
+    <PackageReference Include="Civic.Core.Configuration" Version="1.24.881" />
     <PackageReference Include="Microsoft.Net.Compilers" Version="2.6.1" />
   </ItemGroup>
   <ItemGroup>

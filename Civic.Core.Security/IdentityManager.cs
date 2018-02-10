@@ -5,16 +5,22 @@ namespace Civic.Core.Security
 {
     public static class IdentityManager
     {
-        // ReSharper disable ConditionIsAlwaysTrueOrFalse
         public static string Username
         {
             get
             {
-                if (HttpContext.Current == null || HttpContext.Current.User==null || HttpContext.Current.User.Identity==null || !HttpContext.Current.User.Identity.IsAuthenticated) return "UNK";
+                return IdentityConfig.Current.UsernameHasDomain ? UsernameWithDomain : UsernameOnly;
+            }
+        }
+
+        public static string UsernameWithDomain
+        {
+            get
+            {
+                if (HttpContext.Current == null || HttpContext.Current.User == null || HttpContext.Current.User.Identity == null || !HttpContext.Current.User.Identity.IsAuthenticated) return "UNK";
                 return HttpContext.Current.User.Identity.Name;
             }
         }
-        // ReSharper restore ConditionIsAlwaysTrueOrFalse
 
         public static string UsernameOnly
         {

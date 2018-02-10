@@ -58,5 +58,16 @@ namespace Civic.Core.Security.Configuration
             }
 		}
         private bool _transformXForwardedFor;
+
+        public bool UsernameHasDomain
+        {
+            get
+            {
+                if (Attributes.ContainsKey(Constants.CONFIG_USERNAMEHASDOMAIN_PROP))
+                    return bool.Parse(Attributes[Constants.CONFIG_USERNAMEHASDOMAIN_PROP]);
+                return Constants.CONFIG_USERNAMEHASDOMAIN_DEFAULT;
+            }
+            set { Attributes[Constants.CONFIG_USERNAMEHASDOMAIN_PROP] = value.ToString(); }
+        }
     }
 }

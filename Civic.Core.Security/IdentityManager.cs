@@ -26,7 +26,7 @@ namespace Civic.Core.Security
         {
             get
             {
-                var username = Username;
+                var username = UsernameWithDomain;
                 if (!string.IsNullOrEmpty(username))
                 {
                     var parts = username.Split('\\');

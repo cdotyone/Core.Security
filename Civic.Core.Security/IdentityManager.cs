@@ -46,7 +46,7 @@ namespace Civic.Core.Security
             var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
 
             // Get the claims values
-            return identity.Claims.Where(c => c.Type == ClaimTypes.Name)
+            return identity.Claims.Where(c => c.Type == claimName)
                 .Select(c => c.Value).SingleOrDefault();
         }
 

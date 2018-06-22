@@ -1,4 +1,8 @@
-﻿using System.Web;
+﻿using System.Dynamic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading;
+using System.Web;
 using Civic.Core.Security.Configuration;
 
 namespace Civic.Core.Security
@@ -34,6 +38,16 @@ namespace Civic.Core.Security
                 }
                 return "UNK";
             }
+        }
+
+        public static string GetClaimValue(string claimName)
+        {
+            //Get the current claims principal
+            var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+
+            // Get the claims values
+            return identity.Claims.Where(c => c.Type == ClaimTypes.Name)
+                .Select(c => c.Value).SingleOrDefault();
         }
 
         public static string ClientMachine

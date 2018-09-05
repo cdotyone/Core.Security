@@ -40,6 +40,19 @@ namespace Civic.Core.Security
             }
         }
 
+        public static string GetClaimValue(HttpContext context, string claimName)
+        {
+            // Get the claims values
+            return GetClaimValue((ClaimsPrincipal) context.User , claimName);
+        }
+
+
+        public static string GetClaimValue(ClaimsPrincipal identity, string claimName)
+        {
+            // Get the claims values
+            return GetClaimValue(identity, claimName);
+        }
+
         public static string GetClaimValue(string claimName)
         {
             //Get the current claims principal

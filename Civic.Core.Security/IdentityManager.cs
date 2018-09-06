@@ -10,7 +10,7 @@ namespace Civic.Core.Security
 {
     public static class IdentityManager
     {
-        [Obsolete("UsernameOnly is deprecated, please use GetUsername instead.")]
+        //[Obsolete("UsernameOnly is deprecated, please use GetUsername instead.")]
         public static string Username
         {
             get { return IdentityConfig.Current.UsernameHasDomain ? UsernameWithDomain : UsernameOnly; }

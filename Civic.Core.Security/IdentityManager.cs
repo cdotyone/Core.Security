@@ -1,6 +1,7 @@
 ﻿using System.Dynamic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading;
 using System.Web;
 using Civic.Core.Security.Configuration;
@@ -40,27 +41,17 @@ namespace Civic.Core.Security
             }
         }
 
-        public static string GetClaimValue(HttpContext context, string claimName)
-        {
-            // Get the claims values
-            return GetClaimValue((ClaimsPrincipal) context.User , claimName);
-        }
-
-
         public static string GetClaimValue(ClaimsPrincipal identity, string claimName)
         {
             // Get the claims values
-            return GetClaimValue(identity, claimName);
+            return identity.Claims.Where(c => c.Type == claimName)
+                .Select(c => c.Value).SingleOrDefault();
         }
 
         public static string GetClaimValue(string claimName)
         {
-            //Get the current claims principal
-            var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
-
             // Get the claims values
-            return identity.Claims.Where(c => c.Type == claimName)
-                .Select(c => c.Value).SingleOrDefault();
+            return GetClaimValue((ClaimsPrincipal)Thread.CurrentPrincipal,claimName);
         }
 
         public static string ClientMachine

@@ -45,7 +45,6 @@ namespace Civic.Core.Security
             }
         }
 
-        [Obsolete("ClientMachine is deprecated, need valid replacment not created yet")]
         public static string ClientMachine
         {
             get

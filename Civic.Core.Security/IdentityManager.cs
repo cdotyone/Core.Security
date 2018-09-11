@@ -82,7 +82,7 @@ namespace Civic.Core.Security
 
         public static string GetUsernameWithDomain(IPrincipal user)
         {
-            if (user?.Identity == null || user.Identity.IsAuthenticated) return "UNK";
+            if (user?.Identity == null || !user.Identity.IsAuthenticated) return "UNK";
             return user.Identity.Name;
         }
 

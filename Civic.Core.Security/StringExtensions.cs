@@ -27,12 +27,7 @@ namespace Civic.Core.Security
                 return "";
 
             using (var fs = new FileStream(file.FullName, FileMode.Open))
-            using (var sha = SHA512.Create())
-            {
-                sha.Initialize();
-                var hash = sha.ComputeHash(fs);
-                return BitConverter.ToString(hash);
-            }
+                return fs.ToHash();
         }
 
         [DebuggerStepThrough]
@@ -44,7 +39,16 @@ namespace Civic.Core.Security
             return data.ToString().ToHash();
         }
 
-
+        [DebuggerStepThrough]
+        public static string ToHash(this Stream stream)
+        {
+            using (var sha = SHA512.Create())
+            {
+                sha.Initialize();
+                var hash = sha.ComputeHash(stream);
+                return BitConverter.ToString(hash);
+            }
+        }
     }
 }
 

@@ -19,6 +19,7 @@ namespace Civic.Core.Security
         public const string WINDOWS_ACCOUNT = "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname";
         public const string COMPANY_NAME = "http://www.civic360.com/companyname";
         public const string PERSON_ID = "http://www.civic360.com/personuid";
+        public const string USER_ID = "http://www.civic360.com/useruid";
         public const string ORGANIZATION_ID = "http://www.civic360.com/ouid";
         public const string TOKEN = "http://www.civic360.com/token";
         public const string PHOTOTYPE = "http://www.civic360.com/profilePhotoType";

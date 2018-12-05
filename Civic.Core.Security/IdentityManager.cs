@@ -99,6 +99,13 @@ namespace Civic.Core.Security
             return "UNK";
         }
 
+        public static string GetClaimValue(ClaimsIdentity identity, string claimName)
+        {
+            // Get the claims values
+            return identity.Claims.Where(c => c.Type == claimName)
+                .Select(c => c.Value).SingleOrDefault();
+        }
+
         public static string GetClaimValue(ClaimsPrincipal identity, string claimName)
         {
             // Get the claims values

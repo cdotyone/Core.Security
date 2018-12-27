@@ -13,6 +13,7 @@
     <dependencies>
       <group>
         <dependency id="Civic.Core.Configuration" version="[1.26.1,2.0.0)" xmlns="" />
+        <dependency id="Microsoft.AspNet.WebApi.WebHost" version="[5.2.7,6.0.0)" xmlns="" />
         <dependency id="Microsoft.Net.Compilers" version="[2.10.0,3.0.0)" xmlns="" />
       </group>
     </dependencies>

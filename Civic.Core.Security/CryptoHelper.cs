@@ -42,7 +42,7 @@ namespace Civic.Core.Security
 			}
 			catch
 			{
-				throw new Exception("Failed to initialized base encryption method.");
+				throw new Exception("Failed to initialize base encryption method.");
 			}
 		}
 

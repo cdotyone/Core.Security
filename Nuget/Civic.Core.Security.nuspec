@@ -13,8 +13,6 @@
     <dependencies>
       <group>
         <dependency id="Civic.Core.Configuration" version="[1.26.7,2.0.0)" xmlns="" />
-        <dependency id="Microsoft.Net.Compilers" version="[2.10.0,3.0.0)" xmlns="" />
-
       </group>
     </dependencies>
     <frameworkAssemblies>

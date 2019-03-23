@@ -4,7 +4,7 @@ using Core.Configuration;
 
 namespace Core.Security
 {
-    public class StandardClaimTypes
+    public static class StandardClaimTypes
     {
         public static bool IsGroup(string type)
         {
@@ -37,9 +37,7 @@ namespace Core.Security
         public const string CITY = "http://schemas.microsoft.com/ws/2008/06/identity/claims/locality";
         public const string POSTAL_CODE = "http://schemas.microsoft.com/ws/2008/06/identity/claims/postalcode";
 
-
-
-        public Dictionary<string,string> GetClaimsDefaultForDataConfig(DataConfig config)
+        public static Dictionary<string,string> GetClaimsDefaultForDataConfig(DataConfig config)
         {
             var claimsDefaults = config.DefaultClaims;
 

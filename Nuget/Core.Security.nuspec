@@ -12,7 +12,7 @@
     <summary>Core.Security</summary>
     <dependencies>
       <group>
-        <dependency id="Civic.Core.Configuration" version="[2.0.0,3.0.0)" xmlns="" />
+        <dependency id="Core.Configuration" version="[2.0.0,3.0.0)" xmlns="" />
       </group>
     </dependencies>
     <frameworkAssemblies>

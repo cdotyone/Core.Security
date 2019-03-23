@@ -4,47 +4,12 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
 using System.Web;
-using Civic.Core.Security.Configuration;
+using Core.Security.Configuration;
 
-namespace Civic.Core.Security
+namespace Core.Security
 {
     public static class IdentityManager
     {
-        //[Obsolete("UsernameOnly is deprecated, please use GetUsername instead.")]
-        public static string Username
-        {
-            get { return IdentityConfig.Current.UsernameHasDomain ? UsernameWithDomain : UsernameOnly; }
-        }
-
-        [Obsolete("UsernameWithDomain is deprecated, please use GetUsernameWithDomain instead.")]
-        public static string UsernameWithDomain
-        {
-            get
-            {
-                if (HttpContext.Current == null || HttpContext.Current.User == null) return "UNK";
-                return GetUsernameWithDomain(HttpContext.Current.User);
-            }
-        }
-
-
-        [Obsolete("UsernameOnly is deprecated, please use GetUsernameOnly instead.")]
-        public static string UsernameOnly
-        {
-            get
-            {
-                if (HttpContext.Current == null || HttpContext.Current.User == null) return "UNK";
-
-                var username = GetUsernameWithDomain(HttpContext.Current.User);
-                if (!string.IsNullOrEmpty(username))
-                {
-                    var parts = username.Split('\\');
-                    return parts[parts.Length - 1];
-                }
-
-                return "UNK";
-            }
-        }
-
         public static string ClientMachine
         {
             get

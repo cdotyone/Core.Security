@@ -1,4 +1,4 @@
-﻿namespace Civic.Core.Security
+﻿namespace Core.Security
 {
     internal static class Constants
     {

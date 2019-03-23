@@ -1,5 +1,5 @@
 ﻿
-namespace Civic.Core.Security
+namespace Core.Security
 {
     public class StandardClaimTypes
     {

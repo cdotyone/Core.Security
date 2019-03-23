@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
-namespace Civic.Core.Security
+namespace Core.Security
 {
     public class Impersonator : IDisposable
     {

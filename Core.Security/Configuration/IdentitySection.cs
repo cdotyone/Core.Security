@@ -1,4 +1,4 @@
-﻿using Civic.Core.Configuration;
+﻿using Core.Configuration;
 
 namespace Core.Security.Configuration
 {

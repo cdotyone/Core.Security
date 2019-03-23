@@ -1,4 +1,7 @@
 ﻿
+using System.Collections.Generic;
+using Core.Configuration;
+
 namespace Core.Security
 {
     public class StandardClaimTypes
@@ -33,5 +36,40 @@ namespace Core.Security
         public const string ADDRESS = "http://schemas.microsoft.com/ws/2008/06/identity/claims/streetaddress";
         public const string CITY = "http://schemas.microsoft.com/ws/2008/06/identity/claims/locality";
         public const string POSTAL_CODE = "http://schemas.microsoft.com/ws/2008/06/identity/claims/postalcode";
+
+
+
+        public Dictionary<string,string> GetClaimsDefaultForDataConfig(DataConfig config)
+        {
+            var claimsDefaults = config.DefaultClaims;
+
+            if (claimsDefaults != null) return claimsDefaults;
+
+            if (config.Children.ContainsKey("claims"))
+            {
+                var claims = config.Children["claims"];
+
+                var defaults = new Dictionary<string, string>();
+
+                foreach (var pairs in claims.Children)
+                {
+                    defaults[pairs.Value.Attributes["name"]] = pairs.Value.Attributes["claim"];
+                }
+
+                claimsDefaults = defaults;
+            }
+            else
+            {
+                var defaults = new Dictionary<string, string>
+                {
+                    ["@ouid"] = StandardClaimTypes.ORGANIZATION_ID, 
+                    ["@personuid"] = StandardClaimTypes.PERSON_ID
+                };
+
+
+                claimsDefaults = defaults;
+            }
+            return claimsDefaults;
+        }
     }
 }

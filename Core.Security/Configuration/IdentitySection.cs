@@ -1,6 +1,6 @@
-﻿using Core.Configuration;
+﻿using Stack.Core.Configuration;
 
-namespace Core.Security.Configuration
+namespace Stack.Core.Security.Configuration
 {
     public class IdentityConfig : NamedConfigurationElement
     {

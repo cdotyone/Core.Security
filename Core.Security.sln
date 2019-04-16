@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{645C9A7B
 		Nuget\Stack.Core.Security.nuspec = Nuget\Stack.Core.Security.nuspec
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "Core.Security\Core.Security.csproj", "{E4D42913-2A91-4438-B57F-23066D1A7BB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack.Core.Security", "Core.Security\Stack.Core.Security.csproj", "{E4D42913-2A91-4438-B57F-23066D1A7BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

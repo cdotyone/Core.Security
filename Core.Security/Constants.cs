@@ -1,4 +1,4 @@
-﻿namespace Core.Security
+﻿namespace Stack.Core.Security
 {
     internal static class Constants
     {

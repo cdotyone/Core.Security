@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
-using Core.Configuration;
+﻿using System.Collections.Generic;
+using Stack.Core.Configuration;
 
-namespace Core.Security
+namespace Stack.Core.Security
 {
     public static class StandardClaimTypes
     {

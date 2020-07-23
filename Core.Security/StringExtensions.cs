@@ -4,7 +4,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Stack.Core.Security
+namespace Core.Security
 {
     public static class StringExtensions
     {

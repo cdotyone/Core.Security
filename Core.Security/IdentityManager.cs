@@ -3,9 +3,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading;
-using Stack.Core.Security.Configuration;
+using Core.Security.Configuration;
 
-namespace Stack.Core.Security
+namespace Core.Security
 {
     public static class IdentityManager
     {

@@ -1,6 +1,6 @@
-﻿using Stack.Core.Configuration;
+﻿using Core.Configuration;
 
-namespace Stack.Core.Security.Configuration
+namespace Core.Security.Configuration
 {
     public class IdentityConfig : NamedConfigurationElement
     {
@@ -37,13 +37,13 @@ namespace Stack.Core.Security.Configuration
             {
                 if (_current != null) return _current;
 
-                if (_coreConfig == null) _coreConfig = CivicSection.Current;
+                if (_coreConfig == null) _coreConfig = CoreSection.Current;
                 _current = new IdentityConfig(_coreConfig.Children.ContainsKey(SectionName) ? _coreConfig.Children[SectionName] : null);
 
                 return _current;
             }
         }
-        private static CivicSection _coreConfig;
+        private static CoreSection _coreConfig;
         private static IdentityConfig _current;
 
         /// <summary>

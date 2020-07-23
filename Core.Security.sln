@@ -1,16 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{645C9A7B-786E-4A04-97FC-E3B2C1B6D55E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		.gitlab-ci.yml = .gitlab-ci.yml
-		Nuget\Stack.Core.Security.nuspec = Nuget\Stack.Core.Security.nuspec
+		CHANGELOG.md = CHANGELOG.md
+		.github\workflows\dotnet-core.yml = .github\workflows\dotnet-core.yml
+		package.json = package.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack.Core.Security", "Core.Security\Stack.Core.Security.csproj", "{E4D42913-2A91-4438-B57F-23066D1A7BB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "Core.Security\Core.Security.csproj", "{E4D42913-2A91-4438-B57F-23066D1A7BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

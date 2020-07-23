@@ -53,6 +53,6 @@ jobs:
     - name: Push
       uses: cdotyone/github-push@main
       with:
-        version: "${{ steps.semver.outputs.new_version }}"
+        version: "${{ steps.cleaned.outputs.version }}"
       env:
         GITHUB_TOKEN: "${{ github.token }}"

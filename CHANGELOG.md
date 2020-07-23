@@ -1,3 +1,12 @@
+## [2.0.13](https://github.com/cdotyone/Core.Security/compare/v2.0.12...v2.0.13) (2020-07-23)
+
+
+### Bug Fixes
+
+* update claims names ([b51100f](https://github.com/cdotyone/Core.Security/commit/b51100f0c7cb6364ced264c82fecf96ec23eceea))
+
+
+
 ## [2.0.12](https://github.com/cdotyone/Core.Security/compare/v2.0.11...v2.0.12) (2020-07-23)
 
 

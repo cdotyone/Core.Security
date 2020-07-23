@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 		package.json = package.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Security", "Core.Security\Core.Security.csproj", "{E4D42913-2A91-4438-B57F-23066D1A7BB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codigo.Core.Security", "Core.Security\Codigo.Core.Security.csproj", "{E4D42913-2A91-4438-B57F-23066D1A7BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

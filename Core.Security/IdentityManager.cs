@@ -31,7 +31,7 @@ namespace Core.Security
             //    }
             //}
 
-            var client = GetClaimValue(StandardClaimTypes.CLIENTIP);
+            var client = GetClaimValue(StandardClaimTypes.CLIENT_IP);
 
             if (client == "::1") client = Environment.MachineName;
             if (string.IsNullOrEmpty(client)) client = "Unknown";

@@ -51,7 +51,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PackageId>Codigo.Core.Utilities</PackageId>
+    <PackageId>Codigo.Core.Security</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>cdotyone</Authors>
     <PackageTags>Foundation,Security</PackageTags>

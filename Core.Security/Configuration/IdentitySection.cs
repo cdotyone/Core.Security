@@ -1,73 +1,51 @@
-﻿using Core.Configuration;
+﻿using System.Collections.Concurrent;
+using Microsoft.Extensions.Configuration;
 
 namespace Core.Security.Configuration
 {
-    public class IdentityConfig : NamedConfigurationElement
+    public static class IdentityConfig
     {
-        #region Members
-
-        private const string IDENTITY_CONFIG_SECTION = "identity";
-
-        #endregion
-
-        public IdentityConfig(INamedElement element)
+        private static ConcurrentDictionary<string,string> _claims= new ConcurrentDictionary<string, string>();
+        public static void Init(IConfiguration config)
         {
-            if (element == null) element = new NamedConfigurationElement() { Name = SectionName };
-            Children = element.Children;
-            Attributes = element.Attributes;
-            Name = element.Name;
+            bool.TryParse(config.GetSection("Core:Security:XForwardedFor").Value, out _transformXForwardedFor);
+            bool.TryParse(config.GetSection("Core:Security:UsernameHasDomain").Value, out _usernameHasDomain);
 
-            _transformXForwardedFor = Attributes.ContainsKey("xforward") && bool.Parse(Attributes["xforward"]);
-        }
-
-        /// <summary>
-        /// Property to return the Section Name 
-        /// </summary>
-        public static string SectionName
-        {
-            get { return IDENTITY_CONFIG_SECTION; }
-        }
-
-        /// <summary>
-        /// To Return the Current iddenty configuration Section
-        /// </summary>
-        internal static IdentityConfig Current
-        {
-            get
+            var claims = config.GetSection("Core:Security:Claims").GetChildren();
+            foreach (var claim in claims)
             {
-                if (_current != null) return _current;
-
-                if (_coreConfig == null) _coreConfig = CoreSection.Current;
-                _current = new IdentityConfig(_coreConfig.Children.ContainsKey(SectionName) ? _coreConfig.Children[SectionName] : null);
-
-                return _current;
+                var name = claim.Key;
+                if (!name.StartsWith("@")) name = "@" + name;
+                _claims[name] = claim.Value;
             }
         }
-        private static CoreSection _coreConfig;
-        private static IdentityConfig _current;
 
         /// <summary>
         /// True if IdentityHelp should translate the x-forwarded-for header to get client ip
         /// </summary>
-		public bool TransformXForwardedFor
+		public static bool TransformXForwardedFor
 		{
             get { return _transformXForwardedFor; }
-            set {
-                Attributes["xforward"] = value.ToString();
-                _transformXForwardedFor = value;
-            }
+            set { _transformXForwardedFor = value; }
 		}
-        private bool _transformXForwardedFor;
+        private static bool _transformXForwardedFor = false;
 
-        public bool UsernameHasDomain
+        public static bool UsernameHasDomain
         {
-            get
+            get { return _usernameHasDomain; }
+            set { _usernameHasDomain = value; }
+        }
+        private static bool _usernameHasDomain = true;
+
+        public static ConcurrentDictionary<string, string> GetClaimsDefaultForDataConfig()
+        {
+            if (_claims.Count <= 0)
             {
-                if (Attributes.ContainsKey(Constants.CONFIG_USERNAMEHASDOMAIN_PROP))
-                    return bool.Parse(Attributes[Constants.CONFIG_USERNAMEHASDOMAIN_PROP]);
-                return Constants.CONFIG_USERNAMEHASDOMAIN_DEFAULT;
-            }
-            set { Attributes[Constants.CONFIG_USERNAMEHASDOMAIN_PROP] = value.ToString(); }
+                _claims["@ouid"] = StandardClaimTypes.ORGANIZATION_ID;
+                _claims["@personuid"] = StandardClaimTypes.PERSON_ID;
+            };
+
+            return _claims;
         }
     }
 }

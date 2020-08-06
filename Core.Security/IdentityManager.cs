@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
-using System.Threading;
 using Core.Security.Configuration;
 
 namespace Core.Security
@@ -31,7 +30,7 @@ namespace Core.Security
             //    }
             //}
 
-            var client = GetClaimValue(StandardClaimTypes.CLIENT_IP);
+            var client = GetClaimValue(user, StandardClaimTypes.CLIENT_IP);
 
             if (client == "::1") client = Environment.MachineName;
             if (string.IsNullOrEmpty(client)) client = "Unknown";
@@ -40,7 +39,7 @@ namespace Core.Security
 
         public static string GetUsername(IPrincipal user)
         {
-            return IdentityConfig.Current.UsernameHasDomain ? GetUsernameWithDomain(user) : GetUsernameOnly(user);
+            return IdentityConfig.UsernameHasDomain ? GetUsernameWithDomain(user) : GetUsernameOnly(user);
         }
 
         public static string GetUsernameWithDomain(IPrincipal user)
@@ -67,12 +66,6 @@ namespace Core.Security
             // Get the claims values
             return (identity.Identity as ClaimsIdentity).Claims.Where(c => c.Type == claimName)
                 .Select(c => c.Value).SingleOrDefault();
-        }
-
-        public static string GetClaimValue(string claimName)
-        {
-            // Get the claims values
-            return GetClaimValue((ClaimsPrincipal) Thread.CurrentPrincipal, claimName);
         }
     }
 }

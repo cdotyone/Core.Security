@@ -42,10 +42,6 @@
     <Compile Include="..\References\VersionInfo.cs" Link="VersionInfo.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Codigo.Core.Configuration" Version="2.0.19" />
-  </ItemGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48'">
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
@@ -60,5 +56,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\LICENSE" Pack="true" PackagePath="$(PackageLicenseFile)" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.6" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
-using Core.Security.Configuration;
 
 namespace Core.Security
 {
@@ -39,7 +38,7 @@ namespace Core.Security
 
         public static string GetUsername(IPrincipal user)
         {
-            return IdentityConfig.UsernameHasDomain ? GetUsernameWithDomain(user) : GetUsernameOnly(user);
+            return SecurityConfig.UsernameHasDomain ? GetUsernameWithDomain(user) : GetUsernameOnly(user);
         }
 
         public static string GetUsernameWithDomain(IPrincipal user)

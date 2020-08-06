@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/cdotyone/Core.Security/compare/v2.0.13...v2.1.0) (2020-08-06)
+
+
+### Features
+
+* replace Core.Configuration with IConfiguration ([7d2cb69](https://github.com/cdotyone/Core.Security/commit/7d2cb6929770ca80e5745e482f4a5ebabea5c6cc))
+
+
+
 ## [2.0.13](https://github.com/cdotyone/Core.Security/compare/v2.0.12...v2.0.13) (2020-07-23)
 
 

@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/cdotyone/Core.Security/compare/v2.1.0...v2.1.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* move config to SecurityConfig ([3cba669](https://github.com/cdotyone/Core.Security/commit/3cba66999b3c6359feb0b5df1c2415f46dbd7385))
+
+
+
 # [2.1.0](https://github.com/cdotyone/Core.Security/compare/v2.0.13...v2.1.0) (2020-08-06)
 
 

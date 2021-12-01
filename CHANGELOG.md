@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/cdotyone/Core.Security/compare/v2.2.0...v2.2.1) (2021-12-01)
+
+
+### Bug Fixes
+
+* bad project assembly name and namespace ([7d5f917](https://github.com/cdotyone/Core.Security/commit/7d5f917f09d1e6fbcbdcfb393bdbed2f8e46e5b0))
+
+
+
 # [2.2.0](https://github.com/cdotyone/Core.Security/compare/v2.1.1...v2.2.0) (2021-12-01)
 
 

@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/cdotyone/Core.Security/compare/v2.1.1...v2.2.0) (2021-12-01)
+
+
+### Features
+
+* add 5.0 and 6.0 support drop 3.1 ([27f43ce](https://github.com/cdotyone/Core.Security/commit/27f43ce121b6940191e4290cb20cd59e6ae491f5))
+
+
+
 ## [2.1.1](https://github.com/cdotyone/Core.Security/compare/v2.1.0...v2.1.1) (2020-08-06)
 
 

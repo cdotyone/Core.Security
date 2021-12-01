@@ -1,3 +1,12 @@
+## [2.2.2](https://github.com/cdotyone/Core.Security/compare/v2.2.1...v2.2.2) (2021-12-01)
+
+
+### Bug Fixes
+
+* update nuget packages ([4bf408b](https://github.com/cdotyone/Core.Security/commit/4bf408b732bc23752911d506ebc6808e8a87cd8b))
+
+
+
 ## [2.2.1](https://github.com/cdotyone/Core.Security/compare/v2.2.0...v2.2.1) (2021-12-01)
 
 
